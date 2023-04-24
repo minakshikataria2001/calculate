@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+<style>
+
+.btn{
+    padding: 10px;
+    margin-top: 5px;
+}
+.cont{
+    border: 2px solid black;
+    max-width: 200px;
+    text-align: center;
+    justify-content: center;
+   overflow: hidden;
+}
+
+.inthis{
+    margin: 5px;
+    height: 30px;
+    width: 130px;
+}
+.inthis2{
+    width: 130px;
+    margin: 5px;
+    height: 30px;
+}
+.result{
+    width: 130px;
+    margin: 5px;
+    height: 30px;
+}
+</style>
+<body>
+    
+    <div class="cont" id="cont">
+        
+        <input type="text"class="inthis" placeholder="kg">
+        <input type="text"class="inthis2" placeholder="rupee">
+        <input type="text"class="result" placeholder="grams"> <br>
+    
+        <button class="btn"onclick="printac()">F gram</button> 
+        <button class="btn"onclick="printac2()">F rupee</button> 
+    
+</div>
+<script>
+
+
+
+const cont = document.getElementById('cont');
+// btn7 = cont1.children[0];
+inputbox = cont.children[0];
+inputbox2 = cont.children[1];
+result = cont.children[2];
+
+function printac(){
+    console.log(inputbox.value);
+    console.log(inputbox2.value);
+   onerupee = 1/ inputbox.value;
+  sol =  parseInt(inputbox2.value*onerupee*1000) ;
+   
+   console.log(sol);
+   result.value =  `${sol}grams`;
+}
+function printac2(){
+    console.log(inputbox.value);
+    console.log(result.value);
+    again = result.value/1000;
+    console.log(again);
+  sol = inputbox.value*again ;
+   
+   console.log(sol);
+   inputbox2.value =  `${sol} rupee`;
+}
+</script>
+
+</script>
+
+
+</body>
+</html>
